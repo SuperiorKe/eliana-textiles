@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(~/.claude/skills/gstack/browse/dist/browse click *)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse snapshot *)",
+      "Bash('~/.claude/skills/gstack/browse/dist/browse' js ' *)",
+      "Bash(~/.claude/skills/gstack/browse/dist/browse screenshot *)"
+    ]
+  }
+}
