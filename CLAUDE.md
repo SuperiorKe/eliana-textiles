@@ -18,7 +18,15 @@ npm run build
 npm start
 ```
 
-There is no test runner configured. `npm run lint` runs `tsc --noEmit` and is the only static analysis step.
+```bash
+# Unit tests
+npm test
+
+# E2E tests (requires dev server running)
+npm run test:e2e
+```
+
+See `TESTING.md` for full conventions. `npm run lint` runs `tsc --noEmit`.
 
 ## Architecture
 
@@ -43,6 +51,16 @@ There is no test runner configured. `npm run lint` runs `tsc --noEmit` and is th
 **Gemini integration**: The app was scaffolded via Google AI Studio. `metadata.json` declares `MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API`. The `GEMINI_API_KEY` env var is expected at runtime (see `.env.example`).
 
 **Path alias**: `@/*` resolves to the project root (configured in `vite.config.ts`).
+
+## Testing
+
+- Unit tests: `src/__tests__/` via Vitest + @testing-library/react
+- E2E tests: `e2e/` via Playwright (Chromium + Mobile Chrome + Mobile Safari)
+- Run: `npm test` (unit), `npm run test:e2e` (E2E, needs server on :3000)
+- See `TESTING.md` for full conventions
+- When fixing a bug → write a regression test first
+- When adding interactive behavior → write an E2E spec in `e2e/`
+- Never commit code that breaks existing tests
 
 ## Skill routing
 
