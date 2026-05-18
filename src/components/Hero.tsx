@@ -58,10 +58,16 @@ export default function Hero() {
           transition={{ delay: 1.6, duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-10"
         >
-          <button className="bg-paper text-ink px-12 py-5 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white hover:shadow-lg transition-all duration-300 w-full sm:w-auto">
+          <button
+            className="bg-paper text-ink px-12 py-5 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white hover:shadow-lg transition-all duration-300 w-full sm:w-auto cursor-pointer"
+            onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Shop Collections
           </button>
-          <button className="text-paper border-b border-paper/20 py-3.5 text-[10px] font-bold uppercase tracking-[0.3em] hover:border-paper transition-all flex items-center gap-2 group">
+          <button
+            className="text-paper border-b border-paper/20 py-3.5 text-[10px] font-bold uppercase tracking-[0.3em] hover:border-paper transition-all flex items-center gap-2 group cursor-pointer"
+            onClick={() => document.getElementById('materials')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Our Materials <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </motion.div>

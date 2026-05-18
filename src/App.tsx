@@ -206,7 +206,7 @@ export default function App() {
         <Hero />
 
         {/* Featured Section */}
-        <section className="py-24 px-12 max-w-7xl mx-auto">
+        <section id="collections" className="py-24 px-12 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
             <div className="max-w-xl">
               <span className="text-[10px] uppercase tracking-[0.4em] text-slate-400 mb-4 block font-bold">
@@ -322,7 +322,7 @@ export default function App() {
         {/* ... rest of the file ... */}
 
         {/* Materials Section */}
-        <section className="bg-ink text-paper py-32 overflow-hidden relative">
+        <section id="materials" className="bg-ink text-paper py-32 overflow-hidden relative">
           <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
