@@ -65,7 +65,7 @@ export default function Hero() {
             Shop Collections
           </button>
           <button
-            className="text-paper border-b border-paper/20 py-3.5 text-[10px] font-bold uppercase tracking-[0.3em] hover:border-paper transition-all flex items-center gap-2 group cursor-pointer"
+            className="text-paper border-b border-paper/20 py-3.5 text-[10px] font-bold uppercase tracking-[0.3em] hover:border-paper transition-all flex items-center gap-2 group cursor-pointer min-h-[44px]"
             onClick={() => document.getElementById('materials')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Our Materials <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
