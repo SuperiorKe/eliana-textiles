@@ -225,7 +225,7 @@ export default function App() {
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
                     className={cn(
-                      "text-[10px] uppercase tracking-[0.4em] font-bold transition-all relative py-4 whitespace-nowrap",
+                      "text-[10px] uppercase tracking-[0.4em] font-bold transition-all relative py-4 whitespace-nowrap min-w-[44px]",
                       activeCategory === cat ? "text-ink after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-ink" : "text-slate-400 hover:text-slate-600"
                     )}
                   >

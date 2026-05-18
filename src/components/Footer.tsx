@@ -62,7 +62,7 @@ export default function Footer() {
             <input
               type="email"
               placeholder="YOUR EMAIL"
-              className="w-full bg-transparent border-b border-paper/20 py-3 text-xs tracking-widest focus:outline-none focus:border-paper transition-colors pr-14"
+              className="w-full bg-transparent border-b border-paper/20 py-3.5 text-xs tracking-widest focus:outline-none focus:border-paper transition-colors pr-14 min-h-[44px]"
             />
             <button className="absolute right-0 top-1/2 -translate-y-1/2 text-[10px] font-bold uppercase tracking-widest min-h-[44px] min-w-[44px] flex items-center justify-center hover:text-paper transition-colors">
               Join
