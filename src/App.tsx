@@ -191,15 +191,16 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-paper text-ink selection:bg-ink selection:text-paper">
-      <Navbar 
-        cartCount={cartCount} 
-        onOpenCart={() => setIsCartOpen(true)} 
+      <Navbar
+        cartCount={cartCount}
+        onOpenCart={() => setIsCartOpen(true)}
         wishlistCount={wishlist.length}
         onOpenWishlist={() => setIsWishlistOpen(true)}
         onSelectProduct={setSelectedProduct}
         products={products}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
+        onSetCategory={setActiveCategory}
       />
       
       <main>

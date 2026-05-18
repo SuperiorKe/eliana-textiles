@@ -13,18 +13,24 @@ interface NavbarProps {
   products: Product[];
   searchQuery: string;
   setSearchQuery: (query: string) => void;
+  onSetCategory?: (category: string) => void;
 }
 
-export default function Navbar({ 
-  cartCount, 
-  onOpenCart, 
-  wishlistCount, 
-  onOpenWishlist, 
+export default function Navbar({
+  cartCount,
+  onOpenCart,
+  wishlistCount,
+  onOpenWishlist,
   onSelectProduct,
   products,
   searchQuery,
-  setSearchQuery
+  setSearchQuery,
+  onSetCategory,
 }: NavbarProps) {
+  const scrollTo = (id: string) => {
+    setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 80);
+  };
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -225,19 +231,45 @@ export default function Navbar({
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-paper border-b border-ink/10 p-6 lg:hidden flex flex-col space-y-4 text-center font-serif text-xl"
+            className="absolute top-full left-0 right-0 bg-paper border-b border-ink/10 p-6 lg:hidden flex flex-col text-center font-serif text-xl"
           >
-            <a href="#" onClick={() => setIsMobileMenuOpen(false)}>Shop All</a>
-            <a href="#" onClick={() => setIsMobileMenuOpen(false)}>Duvets</a>
-            <a href="#" onClick={() => setIsMobileMenuOpen(false)}>Mattresses</a>
-            <a href="#" onClick={() => setIsMobileMenuOpen(false)}>Bed Sheets</a>
-            <a href="#" onClick={() => setIsMobileMenuOpen(false)}>Our Story</a>
+            {([
+              { label: 'Shop All', category: 'All' },
+              { label: 'Duvets', category: 'Duvets' },
+              { label: 'Mattresses', category: 'Mattresses' },
+              { label: 'Bed Sheets', category: 'Bed Sheets' },
+            ] as const).map(({ label, category }) => (
+              <a
+                key={category}
+                href="#collections"
+                className="min-h-[52px] flex items-center justify-center hover:italic transition-all border-b border-ink/5"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMobileMenuOpen(false);
+                  onSetCategory?.(category);
+                  scrollTo('collections');
+                }}
+              >
+                {label}
+              </a>
+            ))}
+            <a
+              href="#materials"
+              className="min-h-[52px] flex items-center justify-center hover:italic transition-all border-b border-ink/5"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMobileMenuOpen(false);
+                scrollTo('materials');
+              }}
+            >
+              Our Story
+            </a>
             <a
               href="https://wa.me/254715035359"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 text-[11px] uppercase tracking-[0.3em] font-bold text-paper bg-ink py-3 px-6 mt-2"
+              className="mt-4 flex items-center justify-center gap-2 text-[11px] uppercase tracking-[0.3em] font-bold text-paper bg-ink py-4 px-6 min-h-[52px]"
             >
               <MessageCircle size={15} strokeWidth={1.5} />
               Order via WhatsApp
