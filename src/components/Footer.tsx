@@ -32,12 +32,12 @@ export default function Footer() {
         <div className="space-y-6">
           <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-paper/40">Shop</h4>
           <nav aria-label="Shop categories">
-            <ul className="space-y-3 text-sm font-medium tracking-wide">
-              <li><a href="#" className="hover:text-paper/60 transition-colors">Duvets</a></li>
-              <li><a href="#" className="hover:text-paper/60 transition-colors">Bed Sheets</a></li>
-              <li><a href="#" className="hover:text-paper/60 transition-colors">Mattresses</a></li>
-              <li><a href="#" className="hover:text-paper/60 transition-colors">Pillows</a></li>
-              <li><a href="#" className="hover:text-paper/60 transition-colors">New Arrivals</a></li>
+            <ul className="text-sm font-medium tracking-wide">
+              <li><a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] flex items-center">Duvets</a></li>
+              <li><a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] flex items-center">Bed Sheets</a></li>
+              <li><a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] flex items-center">Mattresses</a></li>
+              <li><a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] flex items-center">Pillows</a></li>
+              <li><a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] flex items-center">New Arrivals</a></li>
             </ul>
           </nav>
         </div>
@@ -45,12 +45,12 @@ export default function Footer() {
         <div className="space-y-6">
           <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-paper/40">Support</h4>
           <nav aria-label="Support links">
-            <ul className="space-y-3 text-sm font-medium tracking-wide">
-              <li><a href="#" className="hover:text-paper/60 transition-colors">Shipping & Returns</a></li>
-              <li><a href="#" className="hover:text-paper/60 transition-colors">Track Your Order</a></li>
-              <li><a href="#" className="hover:text-paper/60 transition-colors">Size Guide</a></li>
-              <li><a href="#" className="hover:text-paper/60 transition-colors">Care Instructions</a></li>
-              <li><a href="#" className="hover:text-paper/60 transition-colors">FAQ</a></li>
+            <ul className="text-sm font-medium tracking-wide">
+              <li><a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] flex items-center">Shipping &amp; Returns</a></li>
+              <li><a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] flex items-center">Track Your Order</a></li>
+              <li><a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] flex items-center">Size Guide</a></li>
+              <li><a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] flex items-center">Care Instructions</a></li>
+              <li><a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] flex items-center">FAQ</a></li>
             </ul>
           </nav>
         </div>
@@ -74,8 +74,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-paper/10 flex flex-col md:flex-row justify-between text-[10px] uppercase tracking-[0.2em] text-paper/30 space-y-4 md:space-y-0">
         <p>© {new Date().getFullYear()} ELIANA TEXTILES. ALL RIGHTS RESERVED.</p>
         <div className="flex space-x-8">
-          <a href="#" className="hover:text-paper/60 transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-paper/60 transition-colors">Terms of Service</a>
+          <a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] inline-flex items-center">Privacy Policy</a>
+          <a href="#" className="hover:text-paper/60 transition-colors min-h-[44px] inline-flex items-center">Terms of Service</a>
         </div>
       </div>
     </footer>
