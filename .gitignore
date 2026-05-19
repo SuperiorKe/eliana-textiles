@@ -9,3 +9,12 @@ coverage/
 .gstack/
 
 .vercel
+
+# Client-sensitive documents
+SCOPE.md
+
+# Dev screenshots
+screenshots/
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json

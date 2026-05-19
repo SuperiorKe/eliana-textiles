@@ -9,7 +9,7 @@ export interface Review {
 export interface Product {
   id: string;
   name: string;
-  category: "Duvets" | "Mattresses" | "Bed Sheets";
+  category: "Duvets" | "Mattresses" | "Bed Sheets" | "Accessories";
   price: number;
   description: string;
   image: string;
