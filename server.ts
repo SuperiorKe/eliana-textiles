@@ -7,7 +7,7 @@ dotenv.config();
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   // API routes
   app.get("/api/health", (req, res) => {
@@ -15,15 +15,7 @@ async function startServer() {
   });
 
   app.get("/api/products", (req, res) => {
-    // Simulated delay and occasional failure for testing robust handling
-    const shouldFail = false;
-    
-    setTimeout(() => {
-      if (shouldFail) {
-        res.status(500).json({ error: "Failed to fetch textiles from the studio. Please try again." });
-      } else {
-        // We'll import products here or just define them
-        res.json([
+    res.json([
           {
             id: "1",
             name: "Premium Luxury Duvet Set",
@@ -100,9 +92,7 @@ async function startServer() {
             reviews: [],
             attributes: { material: "Hypoallergenic Microfibre", weight: "3.0kg" }
           }
-        ]);
-      }
-    }, 800);
+    ]);
   });
 
   // Vite middleware for development

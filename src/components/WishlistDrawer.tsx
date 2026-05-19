@@ -103,7 +103,7 @@ const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
                               {item.category}
                             </p>
                           </div>
-                          <p className="font-medium">${item.price}</p>
+                          <p className="font-medium">KSh {item.price.toLocaleString()}</p>
                         </div>
                         
                         <div className="mt-auto flex items-center gap-4">

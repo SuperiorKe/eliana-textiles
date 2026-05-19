@@ -50,7 +50,7 @@ const ComparisonModal: React.FC<ComparisonModalProps> = ({ products, isOpen, onC
           <div className="p-8 border-b border-ink/10 flex flex-col gap-4">
             <div className="flex items-center justify-between">
               <Breadcrumbs items={[{ label: "Comparison" }]} />
-              <button onClick={onClose} className="p-2 hover:bg-ink/5 rounded-full transition-colors -mr-2">
+              <button onClick={onClose} aria-label="Close comparison" className="p-2 hover:bg-ink/5 rounded-full transition-colors -mr-2">
                 <X size={24} />
               </button>
             </div>
@@ -80,7 +80,7 @@ const ComparisonModal: React.FC<ComparisonModalProps> = ({ products, isOpen, onC
                             <X size={16} />
                           </button>
                           <div className="aspect-[3/4] bg-[#e8e4df] mb-4">
-                            <img src={p.image} className="w-full h-full object-cover" />
+                            <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
                           </div>
                           <h3 className="font-serif text-lg leading-tight">{p.name}</h3>
                           <p className="text-xl font-medium mt-2">KSh {p.price.toLocaleString()}</p>

@@ -1,5 +1,8 @@
 import { Product } from "./types";
 
+export const WHATSAPP_NUMBER = "254715035359";
+export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+
 export const PRODUCTS: Product[] = [
   {
     id: "1",

@@ -8,10 +8,11 @@ export default function Newsletter() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
-    }
+    if (!email) return;
+    // TODO: wire up to an email service (Mailchimp, Resend, etc.) before launch
+    console.warn("Newsletter submission not wired up — email not sent:", email);
+    setSubscribed(true);
+    setEmail("");
   };
 
   return (

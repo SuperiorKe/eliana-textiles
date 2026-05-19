@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Trash2, ShoppingBag, Plus } from "lucide-react";
 import { CartItem, Product } from "../types";
+import { WHATSAPP_BASE_URL } from "../constants";
 import { cn } from "../lib/utils";
 
 interface CartDrawerProps {
@@ -128,7 +129,7 @@ export default function CartDrawer({
                     {upsellProducts.map((p) => (
                       <div key={p.id} className="flex items-center gap-4 group">
                         <div className="w-16 h-20 bg-ink/[0.03] overflow-hidden flex-shrink-0">
-                          <img src={p.image} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" />
+                          <img src={p.image} alt={p.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" />
                         </div>
                         <div className="flex-1">
                           <h5 className="text-xs font-serif">{p.name}</h5>
@@ -160,7 +161,7 @@ export default function CartDrawer({
                   (item) => `• ${item.name} x${item.quantity} — KSh ${(item.price * item.quantity).toLocaleString()}`
                 ).join('%0A');
                 const msg = `Hello Eliana Textiles!%0A%0AI'd like to order:%0A${lines}%0A%0ATotal: KSh ${total.toLocaleString()}`;
-                const href = items.length > 0 ? `https://wa.me/254715035359?text=${msg}` : undefined;
+                const href = items.length > 0 ? `${WHATSAPP_BASE_URL}?text=${msg}` : undefined;
                 return (
                   <a
                     href={href}

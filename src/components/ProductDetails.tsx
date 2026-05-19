@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Star, MessageSquare, Send, Info, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { Product, Review } from "../types";
@@ -35,6 +35,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
   const [comment, setComment] = useState("");
   const [userName, setUserName] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [product?.id]);
 
   if (!product) return null;
 
@@ -141,8 +145,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
               </>
             )}
 
-            <button 
+            <button
               onClick={onClose}
+              aria-label="Close details"
               className="absolute top-4 left-4 p-2 bg-paper/80 backdrop-blur rounded-full lg:hidden"
             >
               <X size={20} />
@@ -184,12 +189,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
                   <span className="text-xs text-ink/40 uppercase tracking-widest">{product.reviews.length} Reviews</span>
                 </div>
               </div>
-              <button 
-                onClick={onClose}
-                className="hidden lg:block p-2 hover:bg-ink/5 rounded-full transition-colors"
-              >
-                <X size={24} />
-              </button>
             </div>
 
             <div className="flex-1 overflow-y-auto p-8 space-y-12">

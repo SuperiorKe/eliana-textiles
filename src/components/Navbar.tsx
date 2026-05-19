@@ -3,6 +3,7 @@ import { ShoppingBag, Search, Menu, X, ArrowRight, Heart, MessageCircle } from "
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils";
 import { Product } from "../types";
+import { WHATSAPP_BASE_URL } from "../constants";
 
 interface NavbarProps {
   cartCount: number;
@@ -166,11 +167,11 @@ export default function Navbar({
                         className="flex items-center gap-4 w-full text-left group"
                       >
                         <div className="w-12 h-16 bg-slate-100 flex-shrink-0 overflow-hidden">
-                          <img src={product.image} className="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0" />
+                          <img src={product.image} alt={product.name} className="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0" />
                         </div>
                         <div className="flex-1">
                           <h4 className="font-serif text-sm group-hover:italic transition-all">{product.name}</h4>
-                          <p className="text-[10px] uppercase tracking-widest text-ink/40">${product.price}</p>
+                          <p className="text-[10px] uppercase tracking-widest text-ink/40">KSh {product.price.toLocaleString()}</p>
                         </div>
                         <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-ink/40" />
                       </button>
@@ -205,7 +206,7 @@ export default function Navbar({
             )}
           </button>
           <a
-            href="https://wa.me/254715035359"
+            href="{WHATSAPP_BASE_URL}"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden lg:flex items-center justify-center min-w-[44px] min-h-[44px] text-ink/60 hover:text-ink transition-colors"
@@ -265,7 +266,7 @@ export default function Navbar({
               Our Story
             </a>
             <a
-              href="https://wa.me/254715035359"
+              href="{WHATSAPP_BASE_URL}"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
