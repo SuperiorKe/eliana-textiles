@@ -69,19 +69,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
               e.stopPropagation();
               onAdd(product);
             }}
-            className="bg-paper text-ink p-3 rounded-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-ink hover:text-paper focus:opacity-100 focus:translate-y-0"
+            className="bg-paper text-ink p-3 rounded-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 [@media(hover:none)]:opacity-100 [@media(hover:none)]:translate-y-0 transition-all duration-300 shadow-lg hover:bg-ink hover:text-paper focus:opacity-100 focus:translate-y-0"
             aria-label={`Add ${product.name} to bag`}
           >
             <Plus size={20} />
           </button>
-          
+
           <button
             onClick={(e) => {
               e.stopPropagation();
               onToggleComparison(product);
             }}
             className={cn(
-              "p-3 rounded-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 shadow-lg delay-75 backdrop-blur focus:opacity-100 focus:translate-y-0",
+              "p-3 rounded-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 [@media(hover:none)]:opacity-100 [@media(hover:none)]:translate-y-0 transition-all duration-500 shadow-lg delay-75 backdrop-blur focus:opacity-100 focus:translate-y-0",
               isComparing ? "bg-ink text-paper" : "bg-paper/80 text-ink hover:bg-paper"
             )}
             aria-label={isComparing ? `Remove ${product.name} from comparison` : `Add ${product.name} to comparison`}
@@ -95,7 +95,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               onToggleWishlist(product);
             }}
             className={cn(
-              "p-3 rounded-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 shadow-lg delay-150 backdrop-blur focus:opacity-100 focus:translate-y-0",
+              "p-3 rounded-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 [@media(hover:none)]:opacity-100 [@media(hover:none)]:translate-y-0 transition-all duration-700 shadow-lg delay-150 backdrop-blur focus:opacity-100 focus:translate-y-0",
               isWishlisted ? "bg-red-50 text-red-500" : "bg-paper/80 text-ink hover:bg-paper"
             )}
             aria-label={isWishlisted ? `Remove ${product.name} from wishlist` : `Add ${product.name} to wishlist`}
@@ -117,12 +117,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </div>
       </div>
 
-      <div className="flex justify-between items-start">
-        <div>
-          <h3 className="font-serif text-xl mb-1">{product.name}</h3>
-          <p className="text-xs text-ink/50 uppercase tracking-wider">{product.description}</p>
+      <div>
+        <div className="flex justify-between items-baseline gap-2 mb-1">
+          <h3 className="font-serif text-base sm:text-xl leading-tight">{product.name}</h3>
+          <span className="font-medium text-ink/80 text-sm whitespace-nowrap flex-shrink-0">KSh {product.price.toLocaleString()}</span>
         </div>
-        <span className="font-medium text-ink/80">KSh {product.price.toLocaleString()}</span>
+        <p className="text-xs text-ink/50 uppercase tracking-wider line-clamp-2">{product.description}</p>
       </div>
     </motion.div>
   );

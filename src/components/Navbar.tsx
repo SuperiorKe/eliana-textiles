@@ -110,24 +110,24 @@ export default function Navbar({
           <div className="relative" ref={searchRef}>
             <AnimatePresence>
               {isSearchOpen ? (
-                <motion.div 
-                  initial={{ width: 0, opacity: 0 }}
-                  animate={{ width: 300, opacity: 1 }}
-                  exit={{ width: 0, opacity: 0 }}
-                  className="flex items-center"
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flex items-center gap-2"
                 >
                   <input
                     autoFocus
                     type="text"
-                    placeholder="SEARCH OUR COLLECTIONS..."
+                    placeholder="SEARCH..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     aria-label="Search collections"
-                    className="w-full bg-transparent border-b border-ink py-1 text-[10px] uppercase tracking-widest focus:outline-none placeholder:text-ink/30"
+                    className="w-28 sm:w-48 lg:w-[260px] min-w-0 bg-transparent border-b border-ink py-1 text-[10px] uppercase tracking-widest focus:outline-none placeholder:text-ink/30"
                   />
-                  <button 
-                    onClick={() => { setIsSearchOpen(false); setSearchQuery(""); }} 
-                    className="ml-2 text-ink/50 hover:text-ink"
+                  <button
+                    onClick={() => { setIsSearchOpen(false); setSearchQuery(""); }}
+                    className="flex-shrink-0 text-ink/50 hover:text-ink"
                     aria-label="Close search"
                   >
                     <X size={16} />
