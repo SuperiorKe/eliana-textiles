@@ -96,7 +96,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
           className="bg-paper w-full max-w-5xl max-h-[90vh] overflow-hidden shadow-2xl rounded-sm flex flex-col lg:flex-row"
         >
           {/* Image Side */}
-          <div className="lg:w-1/2 bg-[#e8e4df] relative group overflow-hidden">
+          <div className="lg:w-1/2 h-64 sm:h-80 lg:h-auto flex-shrink-0 bg-[#e8e4df] relative group overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.img 
                 key={currentImageIndex}
@@ -112,17 +112,17 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 
             {images.length > 1 && (
               <>
-                <button 
+                <button
                   onClick={(e) => { e.stopPropagation(); prevImage(); }}
                   aria-label="Previous image"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-paper/20 backdrop-blur-sm text-ink hover:bg-paper/80 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-paper/20 backdrop-blur-sm text-ink hover:bg-paper/80 transition-all opacity-0 group-hover:opacity-100 [@media(hover:none)]:opacity-100 focus:opacity-100"
                 >
                   <ChevronLeft size={24} />
                 </button>
-                <button 
+                <button
                   onClick={(e) => { e.stopPropagation(); nextImage(); }}
                   aria-label="Next image"
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-paper/20 backdrop-blur-sm text-ink hover:bg-paper/80 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-paper/20 backdrop-blur-sm text-ink hover:bg-paper/80 transition-all opacity-0 group-hover:opacity-100 [@media(hover:none)]:opacity-100 focus:opacity-100"
                 >
                   <ChevronRight size={24} />
                 </button>
@@ -155,7 +155,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
           </div>
 
           {/* Content Side */}
-          <div className="lg:w-1/2 flex flex-col overflow-hidden">
+          <div className="lg:w-1/2 flex flex-col flex-1 min-h-0 overflow-hidden">
             <div className="p-8 pb-4 border-b border-ink/5 flex flex-col gap-6 relative">
               <div className="flex justify-between items-start">
                 <Breadcrumbs 
