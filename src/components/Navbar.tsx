@@ -49,11 +49,12 @@ export default function Navbar({
       else if (name.startsWith(query)) score += 50;
       else if (name.includes(query)) score += 10;
       
-      const avgRating = p.reviews.length > 0 
-        ? p.reviews.reduce((acc, r) => acc + r.rating, 0) / p.reviews.length 
-        : 0;
-      
-      score += avgRating * 2;
+      if (score > 0) {
+        const avgRating = p.reviews.length > 0
+          ? p.reviews.reduce((acc, r) => acc + r.rating, 0) / p.reviews.length
+          : 0;
+        score += avgRating * 2;
+      }
       return { product: p, score };
     });
 

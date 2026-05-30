@@ -80,12 +80,15 @@ export default function App() {
         else if (name.includes(query)) score += 10;
         else if (category.includes(query)) score += 5;
         
-        const avgRating = p.reviews.length > 0 
-          ? p.reviews.reduce((acc, r) => acc + r.rating, 0) / p.reviews.length 
-          : 0;
-        
-        score += avgRating * 2;
-        
+        // Only boost by rating when the product already matched — avoids surfacing
+        // unrelated products purely because they have high ratings.
+        if (score > 0) {
+          const avgRating = p.reviews.length > 0
+            ? p.reviews.reduce((acc, r) => acc + r.rating, 0) / p.reviews.length
+            : 0;
+          score += avgRating * 2;
+        }
+
         return { product: p, score };
       });
 
