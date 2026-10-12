@@ -8,9 +8,9 @@ Luxury bedding storefront for Eliana Textiles — a Nairobi-based duvets, mattre
 
 ## Context
 
-Eliana Textiles is a real, operating retail business. Most Nairobi SMBs at their stage either have no online presence or a Wix page that gets one update a year. The brief here was different: a storefront they own outright, with a real product catalogue, page transitions that match the brand's premium positioning, and an order-placement flow that integrates with how they actually do business — which is WhatsApp, not a payment gateway.
+Eliana Textiles is a real bedding business trading at OTC Wholesale Mall, Nairobi. This is a self-initiated concept storefront built for it, not a commissioned project. Most Nairobi SMBs at their stage either have no online presence or a Wix page that gets one update a year. The goal was a storefront they could own outright, with a real product catalogue, page transitions that match the brand's premium positioning, and an order-placement flow that integrates with how they actually do business — which is WhatsApp, not a payment gateway.
 
-This is the storefront for that. Orders are placed via WhatsApp; the site does not process payments. The frontend is the entire customer-facing surface.
+This is that storefront. Orders are placed via WhatsApp; the site does not process payments. The frontend is the entire customer-facing surface.
 
 ---
 
